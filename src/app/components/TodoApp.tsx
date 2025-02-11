@@ -19,10 +19,12 @@ function TodoApp() {
 
   const handleSubmit = async (e:any) => {
   e.preventDefault();
-  console.log("jsff")
+  if(title === "") return
 
   //Todoの追加
   await addTodo(title);
+  let todos = await getAllTodos();
+  setTodos(todos)
   console.log(title)
   setTitle("")
   }
@@ -31,12 +33,12 @@ function TodoApp() {
     <section className='text-center mb-2 text-2xl font-medium'>
       <h3>Supabase Todo App</h3>
       <form onSubmit={(e) => {handleSubmit(e)}}>
-        <input type='text' className='mr-2 shadow-lg p-1 outline-none' onChange={(e) => setTitle(e.target.value)}/>
+        <input type='text' className='mr-2 shadow-lg p-1 outline-none' value={title} onChange={(e) => setTitle(e.target.value)}/>
         <button className='shadow-md border-2 px-1 py-2 rounded-lg bg-green-200' >
           Add
         </button>
       </form>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} setTodos={setTodos}/>
     </section>
   );
 }
