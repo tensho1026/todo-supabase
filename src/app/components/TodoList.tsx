@@ -1,24 +1,25 @@
-import React from 'react'
+import React from "react";
+import { Todo } from "../../../utils/interface";
 
-function TodoList() {
+type Props = {
+  todos: Todo[];
+};
+
+function TodoList(props: Props) {
+  const { todos } = props;
+
   return (
     <div>
       <ul className='mx-auto'>
-        <div className='flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between'>
-          <li className='font-medium'>✅ 読書</li>
-          <span className='cursor-pointer'>✕</span>
-        </div>
-        <div className='flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between'>
-          <li className='font-medium'>✅ 散歩</li>
-          <span className='cursor-pointer'>✕</span>
-        </div>
-        <div className='flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between'>
-          <li className='font-medium'>✅ プログラミング</li>
-          <span className='cursor-pointer'>✕</span>
-        </div>
+        {todos.map((todo) => (
+          <div key={todo.id}className='flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between'>
+            <li className='font-medium'>✅ {todo.title}</li>
+            <span className='cursor-pointer'>✕</span>
+          </div>
+        ))}
       </ul>
     </div>
-  )
+  );
 }
 
-export default TodoList
+export default TodoList;
