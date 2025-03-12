@@ -2,6 +2,8 @@
 
 🚀 **デプロイ URL:** [https://todo-supabase-kappa.vercel.app/](https://todo-supabase-kappa.vercel.app/)
 
+- ![image](https://github.com/user-attachments/assets/89e164d1-d36c-4fec-b7e8-6308241dd0b0)
+
 ## 📌 概要
 このプロジェクトは、**Supabase をバックエンドに使用した ToDo アプリ** です。  
 フロントエンドは **Next.js（App Router）** で構築し、**Tailwind CSS** でスタイリング。  
@@ -13,4 +15,4 @@
 - **バックエンド:** [Supabase](https://supabase.com/)（PostgreSQL）
 - **デプロイ:** [Vercel](https://vercel.com/)
 
-- ![image](https://github.com/user-attachments/assets/89e164d1-d36c-4fec-b7e8-6308241dd0b0)
+
